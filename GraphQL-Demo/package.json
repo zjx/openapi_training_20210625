@@ -1,0 +1,28 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "helloWorld.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.25.1",
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.7.0",
+    "mongoose": "^5.12.14",
+    "mysql": "^2.16.0",
+    "promise": "^8.1.0"
+  },
+  "devDependencies": {
+    "apollo-datasource-mongodb": "^0.4.3",
+    "apollo-server-express": "^2.25.1",
+    "cors": "^2.8.5",
+    "uuid": "^8.3.2"
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    /* 查询
+    const id = 1;
+    axios({
+        method: 'POST',// GraphQL的请求方法必须是 POST
+        url: 'http://localhost:4000/graphql',
+        data: {
+            query: `
+            query getArticles($id: ID!){
+              article(id:$id){
+                id,
+                title,
+                body
+              }
+            }`,
+            variables:{
+                id: 1
+            }
+        }
+    }).then(res => {
+        console.log(res)
+    });
+     */
+    /*新增
+    axios({
+        method: 'POST',// GraphQL的请求方法必须是 POST
+        url: 'http://localhost:4000/graphql',
+        data: {
+            query: `
+            mutation create($article: ArticleInput!){
+              createArticle(article: $article){
+                id,
+                title,
+                body
+              }
+            }`,
+            variables: {
+                article: {
+                    title: "title aaa",
+                    body: 'body bbb'
+                }
+            }
+        }
+    }).then(res => {
+        console.log(res)
+    });
+     */
+    /*更新
+    axios({
+        method: 'POST',// GraphQL的请求方法必须是 POST
+        url: 'http://localhost:4000/graphql',
+        data: {
+            query: `
+            mutation update($id: ID!, $article: ArticleInput!){
+              updateArticle(id: $id, article: $article){
+                id,
+                title,
+                body
+              }
+            }`,
+            variables: {
+                id: 2,
+                article: {
+                    title: "title 222",
+                    body: 'body 222'
+                }
+            }
+        }
+    }).then(res => {
+        console.log(res)
+    });
+    */
+    axios({
+        method: 'POST',// GraphQL的请求方法必须是 POST
+        url: 'http://localhost:4000/graphql',
+        data: {
+            query: `
+            mutation delete($id: ID!){
+              deleteArticle(id: $id)
+            }`,
+            variables: {
+                id: 2
+            }
+        }
+    }).then(res => {
+        console.log(res)
+    });
+</script>
+</body>
+</html>
