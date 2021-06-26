@@ -31,3 +31,24 @@ Administrator/manage
 http://localhost:5555/WmRoot/top.dsp#
 http://localhost:5555/WmAdmin/#/integration/dashboard/overview
 
+\\vuenew\VUE
+
+hosts
+172.16.20.186 cas.example.org
+
+
+docker run -d -p 8443:8443 --name cas-management apereo/cas-management:6.3.1                                             
+docker cp .\thekeystore cas-management:/etc/cas/thekeystore
+docker cp .\management.properties cas-management:/etc/cas/config
+docker cp .\users.json cas-management:/etc/cas/config
+docker restart cas-management 
+https://cas.example.org:8443/cas-management
+id:casuser
+pwd:Mellon
+
+http://localhost:8080/cas/login
+
+
+Others:
+http://ip-check.info/?lang=en
+https://checkip.amazonaws.com

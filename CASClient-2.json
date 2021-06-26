@@ -1,0 +1,17 @@
+{
+	"@class": "org.apereo.cas.services.RegexRegisteredService",
+	"serviceId": "^http://cas.example.org:9601/.*",
+	"name": "CASClient",
+	"id": 2,
+	"proxyTicketExpirationPolicy": {
+		"@class": "org.apereo.cas.services.DefaultRegisteredServiceProxyTicketExpirationPolicy"
+	},
+	"serviceTicketExpirationPolicy": {
+		"@class": "org.apereo.cas.services.DefaultRegisteredServiceServiceTicketExpirationPolicy"
+	},
+	"evaluationOrder": 2,
+	"attributeReleasePolicy": {
+		"@class": "org.apereo.cas.services.DenyAllAttributeReleasePolicy"
+	},
+	"logoutUrl": "http://cas.example.org:9601/logout/success"
+}
