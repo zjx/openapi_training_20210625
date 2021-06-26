@@ -73,6 +73,15 @@ pwd:Mellon
 http://localhost:8080/cas/login
 
 
+
+https://date.nager.at/
+https://date.nager.at/api/v2/CountryInfo
+http://localhost:5555/gateway/Holiday/1
+http://localhost:5555/gateway/Holiday/1/api/v2/CountryInfo
+
+add new gateway endpoint:
+http://localhost:5555/gateway/Holiday/1
+
 Others:
 http://ip-check.info/?lang=en
 https://checkip.amazonaws.com
