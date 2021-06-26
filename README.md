@@ -10,6 +10,8 @@ docker exec -it mongo mongo admin
 
 docker pull swaggerapi/swagger-editor
 
+https://hub.docker.com/_/softwareag-apigateway
+
 docker login
 docker pull store/softwareag/apigateway-trial:10.7
 docker pull store/softwareag/microgateway-trial:10.7  
@@ -19,6 +21,9 @@ wsl
 sysctl -w vm.max_map_count=262144
 
 docker run -d -p 5555:5555 -p 9072:9072 --hostname localhost --name apigw store/softwareag/apigateway-trial:10.7 
+
+//official
+docker run -d -p 5555:5555 -p 9072:9072 --hostname apigw-host --name apigw store/softwareag/apigateway-trial:10.7
 
 http://localhost:5555/
 Administrator/manage
