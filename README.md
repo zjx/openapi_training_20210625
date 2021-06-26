@@ -82,6 +82,9 @@ http://localhost:5555/gateway/Holiday/1/api/v2/CountryInfo
 add new gateway endpoint:
 http://localhost:5555/gateway/Holiday/1
 
+http://localhost:9501/api/v2/CountryInfo
+http://localhost:9501/user/
+
 Others:
 http://ip-check.info/?lang=en
 https://checkip.amazonaws.com
