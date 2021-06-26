@@ -1,0 +1,926 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Nager.Date API",
+    "description": "Nager.Date is open source software and is completely free for commercial use. If you would like to support the project you can award a GitHub star ⭐ or even better <a href='https://github.com/sponsors/nager'>actively support us</a>",
+    "contact": {
+      "name": "Nager.Date on GitHub",
+      "url": "https://github.com/nager/Nager.Date/issues"
+    },
+    "license": {
+      "name": "MIT License",
+      "url": "https://github.com/nager/Nager.Date/blob/master/LICENSE.md"
+    },
+    "version": "v1.0"
+  },
+  "paths": {
+    "/api/v2/CountryInfo": {
+      "get": {
+        "tags": [
+          "Country V2"
+        ],
+        "summary": "Get country info from request header `accept-language` or from query parameter",
+        "operationId": "CountryV2CountryInfo",
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryInfoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryInfoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryInfoDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/AvailableCountries": {
+      "get": {
+        "tags": [
+          "Country V2"
+        ],
+        "summary": "Get all available countries",
+        "operationId": "CountryV2AvailableCountries",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryV2Dto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryV2Dto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryV2Dto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v3/CountryInfo/{countryCode}": {
+      "get": {
+        "tags": [
+          "Country V3"
+        ],
+        "summary": "Get country info for the given country",
+        "operationId": "CountryV3CountryInfo",
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryInfoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryInfoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountryInfoDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v3/AvailableCountries": {
+      "get": {
+        "tags": [
+          "Country V3"
+        ],
+        "summary": "Get all available countries",
+        "operationId": "CountryV3AvailableCountries",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryV3Dto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryV3Dto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CountryV3Dto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/LongWeekend/{year}/{countryCode}": {
+      "get": {
+        "tags": [
+          "LongWeekend V2"
+        ],
+        "summary": "Get long weekends for a given country",
+        "operationId": "LongWeekendV2LongWeekend",
+        "parameters": [
+          {
+            "name": "year",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LongWeekendDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LongWeekendDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LongWeekendDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Get/{countryCode}/{year}": {
+      "get": {
+        "tags": [
+          "PublicHolidays V1"
+        ],
+        "summary": "Get Public Holidays",
+        "operationId": "PublicHolidayV1CountryJson",
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "year",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV2Dto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV2Dto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV2Dto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/PublicHolidays/{year}/{countryCode}": {
+      "get": {
+        "tags": [
+          "PublicHolidays V2"
+        ],
+        "summary": "Get Public Holidays",
+        "operationId": "PublicHolidayV2PublicHolidays",
+        "parameters": [
+          {
+            "name": "year",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV2Dto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV2Dto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV2Dto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/IsTodayPublicHoliday/{countryCode}": {
+      "get": {
+        "tags": [
+          "PublicHolidays V2"
+        ],
+        "summary": "Is today a public holiday",
+        "description": "The calculation is made on the basis of UTC time to adjust the time please use the offset.<br />\r\nThis is a special endpoint for `curl`<br /><br />\r\n200 = Today is a public holiday<br />\r\n204 = Today is not a public holiday<br /><br />\r\n`STATUSCODE=$(curl --silent --output /dev/stderr --write-out \"%{http_code}\" https://date.nager.at/Api/v2/IsTodayPublicHoliday/AT)`<br /><br />\r\n`if [ $STATUSCODE -ne 200 ]; then # error handling; fi`",
+        "operationId": "PublicHolidayV2IsTodayPublicHoliday",
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "countyCode",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "utc timezone offset",
+            "schema": {
+              "maximum": 12,
+              "minimum": -12,
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Today is a public holiday"
+          },
+          "204": {
+            "description": "Today is not a public holiday"
+          },
+          "400": {
+            "description": "Validation failure"
+          },
+          "404": {
+            "description": "CountryCode is unknown"
+          }
+        }
+      }
+    },
+    "/api/v2/NextPublicHolidays/{countryCode}": {
+      "get": {
+        "tags": [
+          "PublicHolidays V2"
+        ],
+        "summary": "Returns the upcoming public holidays for the next 365 days for the given country",
+        "operationId": "PublicHolidayV2NextPublicHolidays",
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV2Dto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV2Dto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV2Dto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/NextPublicHolidaysWorldwide": {
+      "get": {
+        "tags": [
+          "PublicHolidays V2"
+        ],
+        "summary": "Returns the upcoming public holidays for the next 7 days",
+        "operationId": "PublicHolidayV2NextPublicHolidaysWorldwide",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV2Dto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV2Dto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV2Dto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v3/PublicHolidays/{year}/{countryCode}": {
+      "get": {
+        "tags": [
+          "PublicHolidays V3"
+        ],
+        "summary": "Get Public Holidays",
+        "operationId": "PublicHolidayV3PublicHolidaysV3",
+        "parameters": [
+          {
+            "name": "year",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV3Dto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV3Dto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV3Dto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v3/IsTodayPublicHoliday/{countryCode}": {
+      "get": {
+        "tags": [
+          "PublicHolidays V3"
+        ],
+        "summary": "Is today a public holiday",
+        "description": "The calculation is made on the basis of UTC time to adjust the time please use the offset.<br />\r\nThis is a special endpoint for `curl`<br /><br />\r\n200 = Today is a public holiday<br />\r\n204 = Today is not a public holiday<br /><br />\r\n`STATUSCODE=$(curl --silent --output /dev/stderr --write-out \"%{http_code}\" https://date.nager.at/Api/v2/IsTodayPublicHoliday/AT)`<br /><br />\r\n`if [ $STATUSCODE -ne 200 ]; then # error handling; fi`",
+        "operationId": "PublicHolidayV3IsTodayPublicHoliday",
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "countyCode",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "utc timezone offset",
+            "schema": {
+              "maximum": 12,
+              "minimum": -12,
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Today is a public holiday"
+          },
+          "204": {
+            "description": "Today is not a public holiday"
+          },
+          "400": {
+            "description": "Validation failure"
+          },
+          "404": {
+            "description": "CountryCode is unknown"
+          }
+        }
+      }
+    },
+    "/api/v3/NextPublicHolidays/{countryCode}": {
+      "get": {
+        "tags": [
+          "PublicHolidays V3"
+        ],
+        "summary": "Returns the upcoming public holidays for the next 365 days for the given country",
+        "operationId": "PublicHolidayV3NextPublicHolidays",
+        "parameters": [
+          {
+            "name": "countryCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV3Dto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV3Dto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV3Dto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v3/NextPublicHolidaysWorldwide": {
+      "get": {
+        "tags": [
+          "PublicHolidays V3"
+        ],
+        "summary": "Returns the upcoming public holidays for the next 7 days",
+        "operationId": "PublicHolidayV3NextPublicHolidaysWorldwide",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV3Dto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV3Dto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PublicHolidayV3Dto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CountryInfoDto": {
+        "type": "object",
+        "properties": {
+          "commonName": {
+            "type": "string",
+            "description": "CommonName",
+            "nullable": true
+          },
+          "officialName": {
+            "type": "string",
+            "description": "OfficialName",
+            "nullable": true
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "CountryCode",
+            "nullable": true
+          },
+          "region": {
+            "type": "string",
+            "description": "Region",
+            "nullable": true
+          },
+          "borders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CountryInfoDto"
+            },
+            "description": "Country Borders",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "CountryInfo Dto"
+      },
+      "CountryV2Dto": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CountryV3Dto": {
+        "type": "object",
+        "properties": {
+          "countryCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LongWeekendDto": {
+        "type": "object",
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "description": "StartDate",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "EndDate",
+            "format": "date-time"
+          },
+          "dayCount": {
+            "type": "integer",
+            "description": "DayCount",
+            "format": "int32"
+          },
+          "needBridgeDay": {
+            "type": "boolean",
+            "description": "NeedBridgeDay"
+          }
+        },
+        "additionalProperties": false,
+        "description": "LongWeekend Dto"
+      },
+      "PublicHolidayType": {
+        "enum": [
+          "Public",
+          "Bank",
+          "School",
+          "Authorities",
+          "Optional",
+          "Observance"
+        ],
+        "type": "string"
+      },
+      "PublicHolidayV2Dto": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "The date",
+            "format": "date"
+          },
+          "localName": {
+            "type": "string",
+            "description": "Local name",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "English name",
+            "nullable": true
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-2",
+            "nullable": true
+          },
+          "fixed": {
+            "type": "boolean",
+            "description": "Is this public holiday every year on the same date"
+          },
+          "global": {
+            "type": "boolean",
+            "description": "Is this public holiday in every county (federal state)"
+          },
+          "counties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "ISO-3166-2 - Federal states",
+            "nullable": true
+          },
+          "launchYear": {
+            "type": "integer",
+            "description": "The launch year of the public holiday",
+            "format": "int32",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/PublicHolidayType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PublicHolidayV3Dto": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "The date",
+            "format": "date"
+          },
+          "localName": {
+            "type": "string",
+            "description": "Local name",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "English name",
+            "nullable": true
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-2",
+            "nullable": true
+          },
+          "fixed": {
+            "type": "boolean",
+            "description": "Is this public holiday every year on the same date"
+          },
+          "global": {
+            "type": "boolean",
+            "description": "Is this public holiday in every county (federal state)"
+          },
+          "counties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "ISO-3166-2 - Federal states",
+            "nullable": true
+          },
+          "launchYear": {
+            "type": "integer",
+            "description": "The launch year of the public holiday",
+            "format": "int32",
+            "nullable": true
+          },
+          "types": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PublicHolidayType"
+            },
+            "description": "A list of types the public holiday it is valid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

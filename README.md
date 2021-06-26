@@ -21,10 +21,18 @@ powershell:
 wsl
 sysctl -w vm.max_map_count=262144
 
+#sample
 docker run -d -p 5555:5555 -p 9072:9072 --hostname localhost --name apigw store/softwareag/apigateway-trial:10.7 
-
-//official
+#official
 docker run -d -p 5555:5555 -p 9072:9072 --hostname apigw-host --name apigw store/softwareag/apigateway-trial:10.7
+
+# powershell return ``````````
+docker run -p 9090:4485 `
+--env mcgw_api_gateway_url=http://localhost:5555/rest/apigateway `
+--env mcgw_api_gateway_user=Administrator `
+--env mcgw_api_gateway_password=manage `
+--env mcgw_downloads_apis=EmployeeService `
+--name microgateway store/softwareag/microgateway-trial:10.7
 
 apigateway & microgateway official command below:
 
