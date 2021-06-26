@@ -85,6 +85,25 @@ http://localhost:5555/gateway/Holiday/1
 http://localhost:9501/api/v2/CountryInfo
 http://localhost:9501/user/
 
+
+API Basic information
+Name	UserInfo
+Version	1.0
+Version	1.0
+
+Native endpoint(s)
+http://192.168.25.230:9501/user
+
+Gateway endpoint(s)
+http://apigw-host:5555/gateway/UserInfo/1.0
+
+Resource name	list all users
+Resource path	/
+
+POSTMAN:
+http://localhost:5555/gateway/UserInfo/1.0/
+
+
 Others:
 http://ip-check.info/?lang=en
 https://checkip.amazonaws.com
